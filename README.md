@@ -99,14 +99,19 @@ The infrastructure follows a classic **Three-Tier Architecture** within a Virtua
 
 ![Module Data Base](assets/terraform_plan_module_data_base.png)
 **Módulo Data Base: Definition**
+
 ![Module Iam](assets/terraform_plan_module_iam.png)
 **Módulo Iam: Definition**
+
 ![Module User Data](assets/terraform_plan_module_user_data.png)
 **Módulo User Data: Definition**
+
 ![Module Network](assets/terraform_plan_with_network_module.png)
 **Módulo Network: Definition**
+
 ![Module Compute](assets/terrform_plan_module_compute.png)
 **Módulo Compute: Definition**
+
 
 ![Terraform Microservice](assets/microservice_in_node.png)
 **Microservice: Definition**
