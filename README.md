@@ -86,3 +86,24 @@ provider "aws" {
   skip_metadata_api_check     = true
 }
 ```
+## 🗺️ Architecture Overview
+
+The infrastructure follows a classic **Three-Tier Architecture** within a Virtual Private Cloud (VPC) in AWS.
+
+![Arquitectur Diagramm 3-Tier](assets/architecture_diagram.png) 
+
+### Key Components:
+...
+
+# 🏢 Coworking Microservice Infrastructure Modules and Microservice (MVP)
+
+![Module Data Base](assets/terraform plan module data base.png)
+![Module Iam](assets/terraform plan module iam.png)
+![Module User_Data](assets/Terraform plan module user_data.png)
+![Module Network](assets/Terraform plan with Network module.png)
+![Module Compute](assets/terrform plan module compute.png)
+
+![Terraform Microservice](assets/Microservice in Node.png)
+
+
+This repository contains the Terraform configuration files...
