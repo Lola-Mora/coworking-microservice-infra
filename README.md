@@ -60,7 +60,7 @@ To destroy all created resources and avoid incurring charges, use the destroy co
 
 ```bash
 terraform destroy
-
+```
 
 ## 🔒 AWS Sandbox and Mock Credentials
 
