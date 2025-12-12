@@ -72,6 +72,7 @@ This configuration allows the project to be verified and planned by anyone, but 
 Configuration in providers.tf (or main.tf):
 Terraform
 
+```bash 
 provider "aws" {
   # ... other configurations ...
 
@@ -84,4 +85,4 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
 }
-
+```
