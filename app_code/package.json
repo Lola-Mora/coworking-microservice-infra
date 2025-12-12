@@ -1,7 +1,7 @@
 {
   "name": "coworking-microservice",
   "version": "1.0.0",
-  "description": "Microservicio de Login/Logout para la app Coworking.",
+  "description": "Microservice of Login/Logout for the app Coworking.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
