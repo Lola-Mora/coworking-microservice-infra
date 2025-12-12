@@ -1,18 +1,18 @@
-// Importamos Express
+// Import Express
 const express = require("express");
 
-// Creamos la app
+// Create the app
 const app = express();
 
-// Puerto donde correrá el microservicio (Debe coincidir con el Target Group)
+// Port where the microservice will run (Must match the Target Group)
 const PORT = 8080; 
 
-// Endpoint inicial (Health Check)
+// Endpoint initial (Health Check)
 app.get("/", (req, res) => {
   res.send("Microservicio de coworking activo 🏢✨");
 });
 
-// Endpoint de ejemplo: lista de espacios
+// Endpoint as example
 app.get("/espacios", (req, res) => {
   const espacios = [
     { id: 1, nombre: "Sala Reuniones A", capacidad: 6 },
@@ -23,7 +23,7 @@ app.get("/espacios", (req, res) => {
   res.json(espacios);
 });
 
-// Arrancamos el servidor
+// Start server
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor Node.js ejecutándose en http://0.0.0.0:${PORT}`);
 });
