@@ -56,13 +56,13 @@ The project is divided into modular components to ensure reusability and maintai
     *(Type `yes` when prompted to begin resource creation on your AWS account.)*
 
 ## 🗑️ Cleanup
-
 To destroy all created resources and avoid incurring charges, use the destroy command:
 
 ```bash
 terraform destroy
 
-#### Reference to Sandbox and AWS Mock Credentials###
+
+## 🔒 AWS Sandbox and Mock Credentials
 
 Since this repository is a conceptual MVP designed for demonstration and educational purposes, it utilizes mock credentials and special provider flags to allow terraform init and terraform plan to execute locally without requiring valid AWS API keys.
 
@@ -84,3 +84,4 @@ provider "aws" {
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
 }
+
