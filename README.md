@@ -112,4 +112,3 @@ The infrastructure follows a classic **Three-Tier Architecture** within a Virtua
 **Microservice: Definition**
 
 
-This repository contains the Terraform configuration files...
