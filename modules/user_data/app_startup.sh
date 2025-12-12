@@ -1,31 +1,31 @@
 #!/bin/bash
 set -e
 
-# --- 1. CONFIGURACIÓN DEL ENTORNO ---
-# La aplicación se ejecutará desde este directorio
+# --- 1. ENVIRONMENT CONFIGURATION ---
+# The application will run from this directory
 APP_DIR="/home/ec2-user/coworking-app"
 LOG_FILE="/var/log/coworking-app.log"
 
-# --- 2. INSTALACIÓN DE DEPENDENCIAS DEL SISTEMA ---
-echo "--- Actualizando el sistema e instalando Node.js ---"
+# --- 2. SYSTEM DEPENDENCY INSTALLATION ---
+echo "--- Updating system and installing Node.js ---"
 yum update -y
 curl -sL https://rpm.nodesource.com/setup_18.x | bash -
 yum install -y nodejs git
 
-# --- 3. DESCARGA DEL CÓDIGO DE LA APLICACIÓN ---
-echo "--- Clonando el código del microservicio ---"
+# --- 3. APPLICATION CODE DOWNLOAD ---
+echo "--- Cloning the microservice code ---"
 mkdir -p $APP_DIR
 cd $APP_DIR
 
-# NOTA IMPORTANTE: En un escenario real, la línea de abajo sería:
-# git clone https://github.com/tu-usuario/coworking-microservice.git .
-# Para este MVP conceptual, usaremos un directorio vacío y simulamos la descarga:
-# rm -rf * # Limpiar el directorio si ya existe
+# IMPORTANT NOTE: In a real scenario, the line below would be:
+# git clone https://github.com/your-user/coworking-microservice.git .
+# For this conceptual MVP, we simulate the download by creating the files:
+# rm -rf * # Clean up the directory if it already exists
 
-# --- 4. INSTALACIÓN DE DEPENDENCIAS Y EJECUCIÓN ---
-echo "--- Instalando dependencias de Node.js y ejecutando ---"
+# --- 4. DEPENDENCY INSTALLATION AND EXECUTION ---
+echo "--- Installing Node.js dependencies and executing ---"
 
-# 4a. Crear un package.json simulado para npm install
+# 4a. Create a simulated package.json for npm install
 cat << 'EOF' > package.json
 {
   "name": "coworking-microservice",
@@ -35,24 +35,24 @@ cat << 'EOF' > package.json
 }
 EOF
 
-# 4b. Crear el archivo server.js
+# 4b. Create the server.js file
 cat << 'EOF' > server.js
 const express = require("express");
 const app = express();
-const PORT = 8080; // Puerto interno
+const PORT = 8080; // Internal port
 app.get("/", (req, res) => {
-  res.send("Microservicio de coworking activo 🏢✨");
+  res.send("Coworking microservice active 🏢✨");
 });
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Servidor Node.js ejecutándose en puerto ${PORT}`);
+  console.log(`Node.js server running on port ${PORT}`);
 });
 EOF
 
 
-# 4c. Instalar las dependencias de Express
+# 4c. Install Express dependencies
 npm install 
 
-# 4d. Ejecutar la aplicación en segundo plano
+# 4d. Execute the application in the background
 nohup npm start > $LOG_FILE 2>&1 &
 
-echo "Script de arranque de la aplicación completo."
+echo "Application startup script complete."
