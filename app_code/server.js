@@ -9,21 +9,21 @@ const PORT = 8080;
 
 // Endpoint initial (Health Check)
 app.get("/", (req, res) => {
-  res.send("Microservicio de coworking activo 🏢✨");
+  res.send("Coworking microservice active 🏢✨");
 });
 
 // Endpoint as example
-app.get("/espacios", (req, res) => {
-  const espacios = [
-    { id: 1, nombre: "Sala Reuniones A", capacidad: 6 },
-    { id: 2, nombre: "Coworker Open Space", capacidad: 12 },
-    { id: 3, nombre: "Oficina Privada 1", capacidad: 2 }
+app.get("/spaces", (req, res) => {
+  const spaces = [
+    { id: 1, name: "Sala Reuniones A", capacity: 6 },
+    { id: 2, name: "Coworker Open Space", capacity: 12 },
+    { id: 3, name: "Oficina Privada 1", capacity: 2 }
   ];
 
-  res.json(espacios);
+  res.json(spaces);
 });
 
 // Start server
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Servidor Node.js ejecutándose en http://0.0.0.0:${PORT}`);
+  console.log(`Server Node.js execute in http://0.0.0.0:${PORT}`);
 });
