@@ -99,11 +99,11 @@ The infrastructure follows a classic **Three-Tier Architecture** within a Virtua
 
 ![Module Data Base](assets/terraform_plan_module_data_base.png)
 ![Module Iam](assets/terraform_plan_module_iam.png)
-![Module User_Data](assets/Terraform_plan module_user_data.png)
-![Module Network](assets/Terraform_plan_with_Network_module.png)
+![Module User Data](assets/terraform_plan_module_user_data.png)
+![Module Network](assets/terraform_plan_with_network_module.png)
 ![Module Compute](assets/terrform_plan_module_compute.png)
 
-![Terraform Microservice](assets/Microservice_in_Node.png)
+![Terraform Microservice](assets/microservice_in_node.png)
 
 
 This repository contains the Terraform configuration files...
