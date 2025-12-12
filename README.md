@@ -97,13 +97,13 @@ The infrastructure follows a classic **Three-Tier Architecture** within a Virtua
 
 # 🏢 Coworking Microservice Infrastructure Modules and Microservice (MVP)
 
-![Module Data Base](assets/terraform plan module data base.png)
-![Module Iam](assets/terraform plan module iam.png)
-![Module User_Data](assets/Terraform plan module user_data.png)
-![Module Network](assets/Terraform plan with Network module.png)
-![Module Compute](assets/terrform plan module compute.png)
+![Module Data Base](assets/terraform_plan_module_data_base.png)
+![Module Iam](assets/terraform_plan_module_iam.png)
+![Module User_Data](assets/Terraform_plan module_user_data.png)
+![Module Network](assets/Terraform_plan_with_Network_module.png)
+![Module Compute](assets/terrform_plan_module_compute.png)
 
-![Terraform Microservice](assets/Microservice in Node.png)
+![Terraform Microservice](assets/Microservice_in_Node.png)
 
 
 This repository contains the Terraform configuration files...
