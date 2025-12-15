@@ -12,9 +12,10 @@ provider "aws" {
   skip_metadata_api_check     = true
 }
 
-### Outputs de la Raíz ###
-output "public_ip_for_login_service" {
-  value = module.network.public_subnet_ids
+### Outputs Root ###
+output "alb_url" {
+  description = "The URL (DNS name) to access the application via the ALB."
+  value       = module.compute.alb_dns_name
 }
 
 # --- Define DB Secrets (for Sandbox) ---
@@ -25,7 +26,7 @@ variable "db_master_pass" { default = "s3cureP@ssword" }
 
 # 1. Call Network Module
 module "network" {
-  source = "./modules/network"
+  source = "../../modules/network" 
 
   vpc_cidr             = "10.0.0.0/16"
   public_subnet_cidrs  = ["10.0.1.0/24", "10.0.2.0/24"]
@@ -35,7 +36,7 @@ module "network" {
 
 # 2. Call Database Module
 module "database" {
-  source = "./modules/database"
+  source = "../../modules/database" 
 
   # Pass outputs from 'network' as inputs to 'database'
   vpc_id             = module.network.vpc_id
@@ -48,12 +49,13 @@ module "database" {
 
 # 3. Call IAM Module
 module "iam" {
-  source = "./modules/iam"
+  source = "../../modules/iam"
 }
 
 # 4. Call the Compute Module (TODOS los inputs están DENTRO de las llaves)
 module "compute" {
-  source = "./modules/compute"
+  source = "../../modules/compute"
+
 
   #### Entradas de Red y DB ####
   vpc_id                     = module.network.vpc_id
